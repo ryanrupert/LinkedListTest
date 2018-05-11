@@ -4,6 +4,7 @@ List::List()
 {
 	head = NULL;
 	tail = NULL;
+	size = 0;
 }
 
 List::~List()
@@ -51,6 +52,7 @@ void List::insertEnd(int d)
 		ptr -> prev = temp;
 		tail = ptr;
 	}
+	size++;
 }
 
 void List::deleteEnd()
@@ -63,6 +65,7 @@ void List::deleteEnd()
 	delete tail;
 	//set tail to the node pointer points to
 	tail = ptr;
+	size--;
 }
 
 void List::deleteBegin()
@@ -75,6 +78,7 @@ void List::deleteBegin()
 	delete head;
 	//set head to the node pointer points to
 	head = ptr;
+	size--;
 }
 
 std::ostream& operator<<(std::ostream& os, const List& list)
@@ -86,4 +90,13 @@ std::ostream& operator<<(std::ostream& os, const List& list)
 		ptr = ptr->next;
 	}while(ptr->next != NULL);
 	os << ptr->data;
+}
+
+int& List::operator[](int pos)
+{
+	int i = 0;
+	Node* ptr = head;
+	for(i = 0; i < size && i < pos; i++)
+		ptr = ptr->next;
+	return ptr->data;
 }

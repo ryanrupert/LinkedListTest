@@ -17,6 +17,7 @@ class List
 		};
 		Node *head;
 		Node *tail;
+		int size;
 
 	public:
 		List();
@@ -25,4 +26,5 @@ class List
 		void deleteEnd();
 		void deleteBegin();
 		friend std::ostream& operator<<(std::ostream& os, const List& list);
+		int& operator[](int pos);
 };
