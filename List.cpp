@@ -9,16 +9,7 @@ List::List()
 
 List::~List()
 {
-	Node* curr = head;
-	Node* next = NULL;
-	while(curr)
-	{
-		next = curr->next;
-		delete curr;
-		curr = next;
-	}
-	head = NULL;
-	tail = NULL;
+	clear();
 }
 
 void List::insertEnd(int d)
@@ -79,6 +70,21 @@ void List::deleteBegin()
 	//set head to the node pointer points to
 	head = ptr;
 	size--;
+}
+
+void List::clear()
+{
+	Node* curr = head;
+	Node* next = NULL;
+	while(curr)
+	{
+		next = curr->next;
+		delete curr;
+		curr = next;
+	}
+	head = NULL;
+	tail = NULL;
+	size = 0;
 }
 
 std::ostream& operator<<(std::ostream& os, const List& list)
