@@ -20,39 +20,5 @@ int main()
 	std::cout << list[1] << std::endl;
   std::cin.get();
 
-  /*std::cout << std::endl;
-  ptr = tail;
-  //do until ptr prev is null
-  do
-  {
-    std::cout << ptr -> data;
-    ptr = ptr -> prev;
-  }while(ptr -> prev != NULL);
-  std::cout << ptr -> data;
-  std::cin.get();
-
-  //delete the end of the list
-  deleteEnd();
-
-  //do until ptr next is null
-  do
-  {
-    std::cout << ptr -> data;
-    ptr = ptr -> next;
-  }while(ptr -> next != NULL);
-  std::cout << ptr -> data;
-  std::cin.get();
-
-  std::cout << std::endl;
-  ptr = tail;
-  //do until ptr prev is null
-  do
-  {
-    std::cout << ptr -> data;
-    ptr = ptr -> prev;
-  }while(ptr -> prev != NULL);
-  std::cout << ptr -> data;
-  std::cin.get();*/
-
   return 0;
 }
