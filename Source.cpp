@@ -16,7 +16,8 @@ int main()
   list.insertEnd(6);
   //insert 5 at the end of the list
   list.insertEnd(5);
-  std::cout << list;
+  std::cout << list << std::endl;
+	std::cout << list[1] << std::endl;
   std::cin.get();
 
   /*std::cout << std::endl;
