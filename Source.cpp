@@ -18,6 +18,8 @@ int main()
 	list.insertEnd(5);
 	std::cout << list << std::endl;
 	std::cout << list[1] << std::endl;
+	list[2] = 7;
+	std::cout << list << std::endl;
 	std::cin.get();
 
 	return 0;
