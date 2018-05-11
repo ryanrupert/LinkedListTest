@@ -25,6 +25,7 @@ class List
 		void insertEnd(int d);
 		void deleteEnd();
 		void deleteBegin();
+		void erase(int pos);
 		void clear();
 		friend std::ostream& operator<<(std::ostream& os, const List& list);
 		int& operator[](int pos);

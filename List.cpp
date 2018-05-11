@@ -72,6 +72,22 @@ void List::deleteBegin()
 	size--;
 }
 
+void List::erase(int pos)
+{
+	Node* ptr = head;
+	if(pos >= size)
+		return;
+
+	for(int i = 0; i < pos; i++)
+		ptr = ptr->next;
+
+	ptr->prev->next = ptr->next;
+	ptr->next->prev = ptr->prev;
+
+	delete ptr;
+	ptr = NULL;
+}
+
 void List::clear()
 {
 	Node* curr = head;

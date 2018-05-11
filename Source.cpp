@@ -20,6 +20,8 @@ int main()
 	std::cout << list[1] << std::endl;
 	list[2] = 7;
 	std::cout << list << std::endl;
+	list.erase(4);
+	std::cout << list << std::endl;
 	std::cin.get();
 
 	return 0;
