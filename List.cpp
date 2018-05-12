@@ -46,32 +46,6 @@ void List::insertEnd(int d)
 	size++;
 }
 
-void List::deleteEnd()
-{
-	//create pointer to tails previous node
-	Node *ptr = tail -> prev;
-	//set pointers next pointer to null
-	ptr -> next = NULL;
-	//delete the node tail points to
-	delete tail;
-	//set tail to the node pointer points to
-	tail = ptr;
-	size--;
-}
-
-void List::deleteBegin()
-{
-	//create pointer to heads next node
-	Node *ptr = head -> next;
-	//set pointers previous pointer to null
-	ptr -> prev = NULL;
-	//delete the node head points to
-	delete head;
-	//set head to the node pointer points to
-	head = ptr;
-	size--;
-}
-
 void List::erase(int pos)
 {
 	Node* ptr = head;

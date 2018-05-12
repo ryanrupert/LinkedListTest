@@ -27,8 +27,6 @@ class List
 		class Iterator;
 
 		void insertEnd(int d);
-		void deleteEnd();
-		void deleteBegin();
 		void erase(int pos);
 		void erase(Iterator pos);
 		void clear();
