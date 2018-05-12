@@ -20,7 +20,9 @@ class List
 		int size;
 
 	public:
+		//constructor
 		List();
+		//deconstructor
 		~List();
 
 		//Iterator forward declaration
