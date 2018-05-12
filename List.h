@@ -1,7 +1,7 @@
 /**
 * Created by Ryan Rupert
 * Date: 2018-05-11
-* Source: None
+* Source: Inline
 * This is the list class to test some linked list stuff.
 */
 #include <iostream>
@@ -22,11 +22,39 @@ class List
 	public:
 		List();
 		~List();
+
+		//Iterator forward declaration
+		class Iterator;
+
 		void insertEnd(int d);
 		void deleteEnd();
 		void deleteBegin();
 		void erase(int pos);
 		void clear();
+
+		//list iterator methods
+		//Source: https://www.geeksforgeeks.org/implementing-iterator-pattern-of-a-single-linked-list/
+		Iterator begin();
+		Iterator end();
+
+		//overloads
 		friend std::ostream& operator<<(std::ostream& os, const List& list);
 		int& operator[](int pos);
+
+		//Iterator
+		class Iterator
+		{
+			private:
+				Node* curr;
+
+			public:
+				friend List;
+				Iterator();
+				Iterator(Node* pNode);
+
+				Iterator& operator++();
+				Iterator& operator++(int);
+				Iterator& operator=(Node* pNode);
+				int operator*();
+		};
 };
