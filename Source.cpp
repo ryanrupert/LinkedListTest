@@ -24,5 +24,12 @@ int main()
 	std::cout << list << std::endl;
 	std::cin.get();
 
+	List::Iterator it = list.begin();
+	it++;
+	it++;
+	std::cout << *it << std::endl;
+	list.erase(it);
+	std::cout << list << std::endl;
+
 	return 0;
 }
