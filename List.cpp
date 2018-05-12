@@ -122,3 +122,50 @@ int& List::operator[](int pos)
 		ptr = ptr->next;
 	return ptr->data;
 }
+
+List::Iterator List::begin()
+{
+	return Iterator(head);
+}
+
+List::Iterator List::end()
+{
+	return Iterator(tail);
+}
+
+
+
+List::Iterator::Iterator()
+{
+	curr = NULL;
+}
+
+List::Iterator::Iterator(Node* pNode)
+{
+	curr = pNode;
+}
+
+List::Iterator& List::Iterator::operator++()
+{
+	if(curr->next)
+		curr = curr->next;
+	return *this;
+}
+
+List::Iterator& List::Iterator::operator++(int)
+{
+	Iterator iterator = *this;
+	++(*this);
+	return iterator;
+}
+
+List::Iterator& List::Iterator::operator=(Node* pNode)
+{
+	this->curr = pNode;
+	return *this;
+}
+
+int List::Iterator::operator*()
+{
+	return curr->data;
+}
