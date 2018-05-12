@@ -30,6 +30,7 @@ class List
 		void deleteEnd();
 		void deleteBegin();
 		void erase(int pos);
+		void erase(Iterator pos);
 		void clear();
 
 		//list iterator methods

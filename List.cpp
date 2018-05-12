@@ -89,6 +89,34 @@ void List::erase(int pos)
 	size--;
 }
 
+void List::erase(Iterator pos)
+{
+	Node* ptr = pos.curr;
+	if(ptr->prev == NULL)
+	{
+		head = ptr->next;
+		head->prev = NULL;
+		delete ptr;
+		ptr = NULL;
+	}
+	else if(ptr->next == NULL)
+	{
+		tail = ptr->prev;
+		tail->next = NULL;
+		delete ptr;
+		ptr = NULL;
+	}
+	else
+	{
+		ptr->prev->next = ptr->next;
+		ptr->next->prev = ptr->prev;
+
+		delete ptr;
+		ptr = NULL;
+	}
+	pos.curr = NULL;
+}
+
 void List::clear()
 {
 	Node* curr = head;
