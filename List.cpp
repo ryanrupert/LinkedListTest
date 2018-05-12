@@ -86,6 +86,7 @@ void List::erase(int pos)
 
 	delete ptr;
 	ptr = NULL;
+	size--;
 }
 
 void List::clear()
