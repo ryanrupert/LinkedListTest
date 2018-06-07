@@ -18,6 +18,7 @@ class List
 		Node *head;
 		Node *tail;
 		int size;
+		Node* newElement(int val = 0);
 
 	public:
 		//constructor

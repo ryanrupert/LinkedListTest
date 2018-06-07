@@ -46,6 +46,18 @@ void List::insert(int val)
 	size++;
 }
 
+List::Node* List::newElement(int val)
+{
+	Node* newNode = NULL;
+
+	newNode = new Node;
+	newNode->data = val;
+	newNode->prev = NULL;
+	newNode->next = NULL;
+
+	return newNode;
+}
+
 void List::erase(int pos)
 {
 	Node* ptr = head;
