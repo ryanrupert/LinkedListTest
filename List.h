@@ -28,7 +28,7 @@ class List
 		//Iterator forward declaration
 		class Iterator;
 
-		void insertEnd(int d);
+		void insert(int val);
 		void erase(int pos);
 		void erase(Iterator pos);
 		void clear();

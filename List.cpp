@@ -12,12 +12,12 @@ List::~List()
 	clear();
 }
 
-void List::insertEnd(int d)
+void List::insert(int val)
 {
 	//this creates a node ptr to the new node
 	Node *ptr = new Node();
 	//this adds d to the data part of the node
-	ptr -> data = d;
+	ptr -> data = val;
 	//this adds null to the next ptr
 	ptr -> next = NULL;
 	//if head is null then
