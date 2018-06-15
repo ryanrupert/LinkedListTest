@@ -61,5 +61,6 @@ class List
 				Iterator& operator++(int);
 				Iterator& operator=(Node* pNode);
 				int operator*();
+				Node* operator&();
 		};
 };

@@ -203,6 +203,11 @@ std::ostream& operator<<(std::ostream& os, const List& list)
 	return os;
 }
 
+List::Node* List::Iterator::operator&()
+{
+	return curr;
+}
+
 int& List::operator[](int pos)
 {
 	int i = 0;
