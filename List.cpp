@@ -156,32 +156,20 @@ void List::erase(Iterator pos)
 
 void List::erase(const Iterator first, const Iterator last)
 {
-	Node * curr = first.curr;
+	Node* curr = first.curr;
+	Node* next = NULL;
+	
+	if(!head)
+		return;
+
 	while(curr != last.curr)
 	{
-		if(curr == head)
-		{
-			head = head->next;
-			head->prev = NULL;
-			delete curr;
-			curr = NULL;
-		}
-		else if(curr == tail)
-		{
-			tail = tail->prev;
-			tail->next = NULL;
-			delete curr;
-			curr = NULL;
-		}
-		else if(curr)
-		{
-			curr->next->prev = curr->prev;
-			curr->prev->next = curr->next;
-			delete curr;
-			curr = NULL;
-		}
-		size--;
+		next = curr->next;
+		erase(Iterator(curr));
+		curr = next;
 	}
+	if(curr)
+		erase(Iterator(curr));
 }
 
 void List::clear()
