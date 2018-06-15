@@ -152,6 +152,7 @@ void List::erase(Iterator pos)
 		ptr = NULL;
 	}
 	pos.curr = NULL;
+	size--;
 }
 
 void List::erase(const Iterator first, const Iterator last)
