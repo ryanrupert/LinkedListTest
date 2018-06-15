@@ -6,6 +6,7 @@ int main()
 	List list;
 
 	std::cout << list << std::endl;
+	std::cout << "add data" << std::endl;
 	//insert 1 at the end of the list
 	list.insert(1);
 	//insert 2 at the end of the list
@@ -27,11 +28,21 @@ int main()
 	std::cout << list << std::endl;
 	std::cin.get();
 
+	std::cout << "init it test" << std::endl;
 	List::Iterator it = list.begin();
 	it++;
 	it++;
 	std::cout << *it << std::endl;
 	list.erase(it);
+
+	std::cout << "erase range test" << std::endl;
+	List::Iterator start = list.begin();
+	start++;
+	List::Iterator last = list.begin();
+	last++;
+	last++;
+	last++;
+	list.erase(start, last);
 	std::cout << list << std::endl;
 
 	return 0;
