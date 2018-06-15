@@ -205,7 +205,7 @@ List::Iterator List::begin()
 
 List::Iterator List::end()
 {
-	return Iterator(tail);
+	return Iterator(nullptr);
 }
 
 
