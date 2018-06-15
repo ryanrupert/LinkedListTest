@@ -12,8 +12,8 @@ class List
 		struct Node
 		{
 			int data;
-			struct Node *next;
-			struct Node *prev;
+			Node *next;
+			Node *prev;
 		};
 		Node *head;
 		Node *tail;
