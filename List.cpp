@@ -46,6 +46,57 @@ void List::insert(int val)
 	size++;
 }
 
+void List::insert(int val, int pos)
+{
+	Node* newNode = newElement(val);
+
+	if(!head)
+	{
+		head = newNode;
+		tail = newNode;
+	}
+	else
+	{
+		Node* curr = NULL;
+		int i = 0;
+		while(curr && i != pos)
+		{
+			curr = curr->next;
+			i++;
+		}
+		if(curr == head)
+		{
+			newNode->next = head;
+			head->prev = newNode;
+			head = newNode;
+			newNode = NULL;
+		}
+		else if(curr == tail)
+		{
+			newNode->next = tail;
+			newNode->prev = tail->prev;
+			tail->prev->next = newNode;
+			tail->prev = newNode;
+			newNode = NULL;
+		}
+		else if(curr)
+		{
+			newNode->next = curr;
+			newNode->prev = curr->prev;
+			curr->prev->next = newNode;
+			curr->prev = newNode;
+			newNode = NULL;
+		}
+		else
+		{
+			tail->next = newNode;
+			newNode->prev = tail;
+			tail = newNode;
+			newNode = NULL;
+		}
+	}
+}
+
 List::Node* List::newElement(int val)
 {
 	Node* newNode = NULL;

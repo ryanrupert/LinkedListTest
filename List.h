@@ -30,6 +30,7 @@ class List
 		class Iterator;
 
 		void insert(int val);
+		void insert(int val, int pos);
 		void erase(int pos);
 		void erase(Iterator pos);
 		void clear();
