@@ -172,12 +172,21 @@ void List::clear()
 std::ostream& operator<<(std::ostream& os, const List& list)
 {
 	List::Node* ptr = list.head;
-	do
+	if(!list.head)
 	{
+		os << "List empty";
+	}
+	else
+	{
+		do
+		{
+			os << ptr->data;
+			os << " ";
+			ptr = ptr->next;
+		}while(ptr->next != NULL);
 		os << ptr->data;
-		ptr = ptr->next;
-	}while(ptr->next != NULL);
-	os << ptr->data;
+	}
+	return os;
 }
 
 int& List::operator[](int pos)
