@@ -117,13 +117,8 @@ void List::erase(int pos)
 
 	for(int i = 0; i < pos; i++)
 		ptr = ptr->next;
-
-	ptr->prev->next = ptr->next;
-	ptr->next->prev = ptr->prev;
-
-	delete ptr;
-	ptr = NULL;
-	size--;
+	
+	erase(Iterator(ptr));
 }
 
 void List::erase(Iterator pos)
