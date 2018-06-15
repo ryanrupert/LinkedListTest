@@ -30,6 +30,7 @@ int main()
 
 	std::cout << "init it test" << std::endl;
 	List::Iterator it = list.begin();
+	std::cout << "Iterator address: " << &it << std::endl;
 	it++;
 	it++;
 	std::cout << *it << std::endl;
