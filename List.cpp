@@ -154,6 +154,36 @@ void List::erase(Iterator pos)
 	pos.curr = NULL;
 }
 
+void List::erase(const Iterator first, const Iterator last)
+{
+	Node * curr = first.curr;
+	while(curr != last.curr)
+	{
+		if(curr == head)
+		{
+			head = head->next;
+			head->prev = NULL;
+			delete curr;
+			curr = NULL;
+		}
+		else if(curr == tail)
+		{
+			tail = tail->prev;
+			tail->next = NULL;
+			delete curr;
+			curr = NULL;
+		}
+		else if(curr)
+		{
+			curr->next->prev = curr->prev;
+			curr->prev->next = curr->next;
+			delete curr;
+			curr = NULL;
+		}
+		size--;
+	}
+}
+
 void List::clear()
 {
 	Node* curr = head;

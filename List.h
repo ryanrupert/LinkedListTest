@@ -34,6 +34,7 @@ class List
 		void insert(int val, int pos);
 		void erase(int pos);
 		void erase(Iterator pos);
+		void erase(const Iterator first, const Iterator last);
 		void clear();
 
 		//list iterator methods
