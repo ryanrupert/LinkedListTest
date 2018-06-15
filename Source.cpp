@@ -4,6 +4,8 @@
 int main()
 {
 	List list;
+
+	std::cout << list << std::endl;
 	//insert 1 at the end of the list
 	list.insert(1);
 	//insert 2 at the end of the list
