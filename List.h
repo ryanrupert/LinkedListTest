@@ -4,6 +4,9 @@
 * Source: Inline
 * This is the list class to test some linked list stuff.
 */
+//http://en.cppreference.com/w/c/language/array_initialization
+//http://en.cppreference.com/w/cpp/utility/initializer_list
+//https://stackoverflow.com/questions/23186775/assignment-of-initializer-list
 #include <iostream>
 #include <cstddef>
 
